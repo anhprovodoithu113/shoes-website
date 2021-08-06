@@ -15,7 +15,9 @@ namespace Shoes_Website.Domain.Models.ShoesWebsite
 
         public string Description { get; set; }
 
-        public string ImagePath { get; set; }
+        public string ImageExtension { get; set; }
+
+        public byte[] ImageData { get; set; }
 
         public bool IsMenShoes { get; set; }
 

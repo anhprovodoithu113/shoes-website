@@ -17,6 +17,7 @@ namespace Shoes_Website.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUnitOfWorkUser, UnitOfWorkUser>();
+            services.AddScoped<IRepository, EFRepository>();
 
             return services;
         }

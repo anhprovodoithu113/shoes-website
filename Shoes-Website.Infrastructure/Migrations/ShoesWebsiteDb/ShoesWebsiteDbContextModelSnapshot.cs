@@ -109,7 +109,10 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageExtension")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsMenShoes")

@@ -1,13 +1,17 @@
 ﻿using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Shoes_Website_Project.Configuration
 {
     public static class SwashbuckleConfiguration
     {
         private const string API_VERSION = "v1.0";
-        private const string API_TITLE = "Bidding Project";
+        private const string API_TITLE = "Shoes Website Project";
         private const string END_POINT = "v1.0/swagger.json";
         private const string JSON_ROUTE = "swagger/{documentName}/swagger.json";
 

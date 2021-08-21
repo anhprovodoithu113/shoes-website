@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Shoes_Website.Application.Products.AddNewProduct;
 using System.Net;
 using Shoes_Website_Project.Configuration.Exceptions;
-using System.IO;
 using Shoes_Website.Application.Products.Common;
 using Shoes_Website.Application.Products.GetAllProducts;
 using System.Collections.Generic;
-using Shoes_Website.Application.Products.AddProductOptionsByProduct;
+using Shoes_Website.Application.Products.AddProductColor;
+using Shoes_Website.Application.Products.AddProductStatus;
+using Shoes_Website.Application.Products.GetColorsByProduct;
+using Shoes_Website.Application.Products.GetProductStatusesByColor;
 
 namespace Shoes_Website_Project.Controllers
 {
@@ -21,11 +23,6 @@ namespace Shoes_Website_Project.Controllers
         public ProductController(IMediator mediator)
         {
             _mediator = mediator;
-
-            if (!Directory.Exists(ProductConstant.folderPath))
-            {
-                Directory.CreateDirectory(ProductConstant.folderPath);
-            }
         }
 
         [HttpGet("get-all-products")]
@@ -39,24 +36,53 @@ namespace Shoes_Website_Project.Controllers
             return Ok(result);
         }
 
+        [HttpGet("get-colors-by-product/{productId}")]
+        [ProducesResponseType(typeof(List<ProductColorResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetColorsByProduct([FromRoute] int productId)
+        {
+            var query = new GetColorsByProductQuery { ProductId = productId };
+            var result = await _mediator.Send(query);
 
-        [HttpPost("add-new-product")]
+            return Ok(result);
+        }
+
+        [HttpGet("get-product-statuses-by-color/{productColorId}")]
+        [ProducesResponseType(typeof(List<ProductStatusResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetProductStatusesByColor([FromRoute] int productColorId)
+        {
+            var query = new GetProductStatusesByColorQuery { ProductColorId = productColorId };
+            var result = await _mediator.Send(query);
+
+            return Ok(result);
+        }
+
+        [HttpPost("add-new-product"), DisableRequestSizeLimit]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> AddNewProduct([FromForm] AddProductCommand command)
         {
-            await _mediator.Send(command);
+            var result = await _mediator.Send(command);
 
-            return Created("", null);
+            return Created("", result);
         }
 
-        [HttpPost("add-options/{productId}")]
+        [HttpPost("add-product-color")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> AddOptionsForProduct([FromRoute] int productId)
+        public async Task<IActionResult> AddColorForProduct([FromBody] AddProductColorCommand command)
         {
-            var command = new AddOptionsForProductCommand(productId);
+            var result = await _mediator.Send(command);
 
+            return Created("", result);
+        }
+
+        [HttpPost("add-product-statuses")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddStatusesForProduct([FromBody] AddProductStatusCommand command)
+        {
             var result = await _mediator.Send(command);
 
             return Created("", result);

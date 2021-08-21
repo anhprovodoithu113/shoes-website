@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Shoes_Website.Domain.Intefaces;
 using Shoes_Website.Domain.Models.ShoesWebsite;
 using Shoes_Website.Application.Products.Common;
+using Microsoft.Extensions.Hosting;
 
 namespace Shoes_Website.Application.Products.AddNewProduct
 {
@@ -35,23 +36,24 @@ namespace Shoes_Website.Application.Products.AddNewProduct
             var binaryImage = await ConvertImageToBinary(request.ImageFile);
             var createdAt = DateTime.Now;
 
+            // Save file to local for back-up purpose
+            var folderServerName = Path.Combine("Resources", ProductConstant.FOLDER_NAME);
+            var localFileName = string.Concat(request.Name, createdAt.Ticks, extension);
+            await File.WriteAllBytesAsync(Path.Combine(Directory.GetCurrentDirectory(), folderServerName, localFileName), binaryImage);
+
             var product = new Product
             {
                 Name = request.Name,
-                ImageData = binaryImage,
-                ImageExtension = extension,
+                CreatedAt = createdAt,
+                ImagePath = localFileName,
                 Original = request.Original,
+                IsMenShoes = request.IsMenShoes,
                 Description = request.Description,
                 DefaultPrice = request.DefaultPrice,
-                CreatedAt = createdAt
             };
 
             await _repository.AddAsync(product);
             await _unitOfWork.CommitAsync();
-
-            // Save file to local for back-up purpose
-            var localFileName = string.Concat(request.Name, createdAt.Ticks, extension);
-            await File.WriteAllBytesAsync(Path.Combine(ProductConstant.folderPath, localFileName), binaryImage);
 
             return Unit.Value;
         }

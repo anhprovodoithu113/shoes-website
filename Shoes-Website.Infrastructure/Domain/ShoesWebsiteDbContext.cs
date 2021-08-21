@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Shoes_Website.Domain.Models.ShoesWebsite;
 
 namespace Shoes_Website.Infrastructure.Domain
@@ -16,7 +15,8 @@ namespace Shoes_Website.Infrastructure.Domain
         }
 
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductOptions> ProductOptions { get; set; }
+        public virtual DbSet<ProductColor> ProductColors { get; set; }
+        public virtual DbSet<ProductStatus> ProductStatuses { get; set; }
         public virtual DbSet<CustomerReviews> CustomerReviews { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
 

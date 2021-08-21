@@ -13,6 +13,7 @@ using Hellang.Middleware.ProblemDetails.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Shoes_Website_Project.Configuration.Exceptions;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace Shoes_Website_Project
 {
@@ -26,6 +27,13 @@ namespace Shoes_Website_Project
                     .AddControllers()
                     .AddProblemDetailsConventions()
                     .AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+
+            services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
             return services;
         }
 

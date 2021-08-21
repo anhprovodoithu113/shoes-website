@@ -18,8 +18,8 @@ namespace Shoes_Website.Domain.Models.ShoesWebsite
 
         public DateTime? DeliveryDate { get; set; }
 
-        public int ProductOptionsId { get; set; }
+        public int ProductStatusId { get; set; }
 
-        public ProductOptions ProductOptions { get; set; }
+        public ProductStatus ProductStatus { get; set; }
     }
 }

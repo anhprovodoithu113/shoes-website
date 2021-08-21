@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shoes-Website.Application\Shoes-Website.Application.csproj" />
+    <ProjectReference Include="..\Shoes-Website.Infrastructure\Shoes-Website.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,6 +10,8 @@ using Hellang.Middleware.ProblemDetails;
 using Microsoft.Extensions.Configuration;
 using Shoes_Website_Project.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace Shoes_Website_Project
 {
@@ -47,6 +49,13 @@ namespace Shoes_Website_Project
             app.UseProblemDetails();
 
             app.Use(CustomMiddleWare);
+
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+                RequestPath = new PathString("/Resources")
+            });
 
             app.UseSwashbuckle();
 

@@ -8,7 +8,8 @@ namespace Shoes_Website.Application.Products.GetColorsByProduct
     {
         public GetColorsByProductIdSpecification(int productId)
         {
-            Query.Where(p => p.ProductId.Equals(productId));
+            Query.Where(p => p.ProductId.Equals(productId))
+                .Include(p => p.ProductStatuses);
         }
     }
 }

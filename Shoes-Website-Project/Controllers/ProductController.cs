@@ -11,6 +11,8 @@ using Shoes_Website.Application.Products.AddProductColor;
 using Shoes_Website.Application.Products.AddProductStatus;
 using Shoes_Website.Application.Products.GetColorsByProduct;
 using Shoes_Website.Application.Products.GetProductStatusesByColor;
+using Shoes_Website.Application.Products.GetProductDetailsById;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shoes_Website_Project.Controllers
 {
@@ -58,6 +60,18 @@ namespace Shoes_Website_Project.Controllers
             return Ok(result);
         }
 
+        [HttpGet("product-details/{productId}")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetProductDetailsById([FromRoute] int productId)
+        {
+            var query = new GetProductDetailsByIdQuery() { ProductId = productId };
+            var result = await _mediator.Send(query);
+
+            return Ok(result);
+        }
+
+        [Authorize(Policy = "UserRole")]
         [HttpPost("add-new-product"), DisableRequestSizeLimit]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
@@ -68,6 +82,7 @@ namespace Shoes_Website_Project.Controllers
             return Created("", result);
         }
 
+        [Authorize(Policy = "AdminRole")]
         [HttpPost("add-product-color")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]

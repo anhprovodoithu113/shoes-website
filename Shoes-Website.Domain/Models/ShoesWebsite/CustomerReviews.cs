@@ -1,4 +1,6 @@
-﻿namespace Shoes_Website.Domain.Models.ShoesWebsite
+﻿using System;
+
+namespace Shoes_Website.Domain.Models.ShoesWebsite
 {
     public class CustomerReviews : EntityBase
     {
@@ -11,6 +13,8 @@
         public string CreatedByName { get; set; }
 
         public string NationalReviewer { get; set; }
+
+        public DateTime CreatedDate { get; set; }
 
         public int ProductId { get; set; }
 

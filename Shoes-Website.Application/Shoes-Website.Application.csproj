@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Shoes-Website.Domain\Shoes-Website.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Interfaces\" />
+  </ItemGroup>
+
 </Project>

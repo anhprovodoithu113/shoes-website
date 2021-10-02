@@ -32,6 +32,9 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Property<string>("CreatedByName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("NationalReviewer")
                         .HasColumnType("nvarchar(max)");
 

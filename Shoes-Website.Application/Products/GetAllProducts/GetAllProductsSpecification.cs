@@ -7,7 +7,7 @@ namespace Shoes_Website.Application.Products.GetAllProducts
     {
         public GetAllProductsSpecification()
         {
-            Query.Include(p => p.ProductOptions);
+            Query.Include(p => p.ProductColors);
         }
     }
 }

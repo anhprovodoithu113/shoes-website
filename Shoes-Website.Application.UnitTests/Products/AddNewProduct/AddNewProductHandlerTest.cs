@@ -2,8 +2,8 @@
 using Xunit;
 using System.Threading;
 using Microsoft.AspNetCore.Http;
-using Shoes_Website.Application.Products.AddNewProduct;
 using Shoes_Website.Domain.Intefaces;
+using Shoes_Website.Application.Products.AddNewProduct;
 
 namespace Shoes_Website.Application.UnitTests.Products.AddNewProduct
 {

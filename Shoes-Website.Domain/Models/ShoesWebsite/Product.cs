@@ -15,9 +15,7 @@ namespace Shoes_Website.Domain.Models.ShoesWebsite
 
         public string Description { get; set; }
 
-        public string ImageExtension { get; set; }
-
-        public byte[] ImageData { get; set; }
+        public string ImagePath { get; set; }
 
         public bool IsMenShoes { get; set; }
 
@@ -29,7 +27,7 @@ namespace Shoes_Website.Domain.Models.ShoesWebsite
 
         public string UpdatedBy { get; set; }
 
-        public IList<ProductOptions> ProductOptions { get; set; }
+        public IList<ProductColor> ProductColors { get; set; }
 
         public IList<CustomerReviews> CustomerReviews { get; set; }
     }

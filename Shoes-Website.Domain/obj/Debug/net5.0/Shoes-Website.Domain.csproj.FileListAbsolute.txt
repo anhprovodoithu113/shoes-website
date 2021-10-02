@@ -2,7 +2,6 @@ E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\bin\Debug
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\bin\Debug\net5.0\Shoes-Website.Domain.dll
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\bin\Debug\net5.0\ref\Shoes-Website.Domain.dll
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\bin\Debug\net5.0\Shoes-Website.Domain.pdb
-E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.csprojAssemblyReference.cache
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.GeneratedMSBuildEditorConfig.editorconfig
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.AssemblyInfoInputs.cache
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.AssemblyInfo.cs
@@ -10,3 +9,4 @@ E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.dll
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\ref\Shoes-Website.Domain.dll
 E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.pdb
+E:\C# Project\ASP .Net Core\Shoes-Website-Project\Shoes-Website.Domain\obj\Debug\net5.0\Shoes-Website.Domain.csprojAssemblyReference.cache

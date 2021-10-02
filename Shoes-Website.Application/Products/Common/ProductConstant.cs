@@ -6,8 +6,8 @@ namespace Shoes_Website.Application.Products.Common
     {
         public const string INVALID_PRODUCT_COMMAND = "Invalid Request for {0}. Try again later";
 
-        public const string folderName = "Image_Files";
+        public const string FOLDER_NAME = "Image_Files";
 
-        public static string folderPath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+        public static string FOLDER_PATH = Path.Combine(Directory.GetCurrentDirectory(), FOLDER_NAME);
     }
 }

@@ -79,13 +79,12 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
-                    b.Property<int>("ProductOptionsId")
+                    b.Property<int>("ProductStatusId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductOptionsId")
-                        .IsUnique();
+                    b.HasIndex("ProductStatusId");
 
                     b.ToTable("Invoices");
                 });
@@ -109,10 +108,7 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ImageData")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("ImageExtension")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsMenShoes")
@@ -138,7 +134,27 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductOptions", b =>
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductColor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductColors");
+                });
+
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductStatus", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,20 +164,17 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductColorId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Size")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductColorId");
 
-                    b.ToTable("ProductOptions");
+                    b.ToTable("ProductStatuses");
                 });
 
             modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.CustomerReviews", b =>
@@ -177,19 +190,19 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
 
             modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.Invoice", b =>
                 {
-                    b.HasOne("Shoes_Website.Domain.Models.ShoesWebsite.ProductOptions", "ProductOptions")
-                        .WithOne("Invoice")
-                        .HasForeignKey("Shoes_Website.Domain.Models.ShoesWebsite.Invoice", "ProductOptionsId")
+                    b.HasOne("Shoes_Website.Domain.Models.ShoesWebsite.ProductStatus", "ProductStatus")
+                        .WithMany("Invoice")
+                        .HasForeignKey("ProductStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProductOptions");
+                    b.Navigation("ProductStatus");
                 });
 
-            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductOptions", b =>
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductColor", b =>
                 {
                     b.HasOne("Shoes_Website.Domain.Models.ShoesWebsite.Product", "Product")
-                        .WithMany("ProductOptions")
+                        .WithMany("ProductColors")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -197,14 +210,30 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductStatus", b =>
+                {
+                    b.HasOne("Shoes_Website.Domain.Models.ShoesWebsite.ProductColor", "ProductColor")
+                        .WithMany("ProductStatuses")
+                        .HasForeignKey("ProductColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductColor");
+                });
+
             modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.Product", b =>
                 {
                     b.Navigation("CustomerReviews");
 
-                    b.Navigation("ProductOptions");
+                    b.Navigation("ProductColors");
                 });
 
-            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductOptions", b =>
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductColor", b =>
+                {
+                    b.Navigation("ProductStatuses");
+                });
+
+            modelBuilder.Entity("Shoes_Website.Domain.Models.ShoesWebsite.ProductStatus", b =>
                 {
                     b.Navigation("Invoice");
                 });

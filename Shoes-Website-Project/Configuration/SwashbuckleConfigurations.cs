@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Shoes_Website_Project.Configuration
 {
@@ -22,7 +21,7 @@ namespace Shoes_Website_Project.Configuration
                     new OpenApiSecurityScheme
                     {
                         In = ParameterLocation.Header,
-                        Description = "Please enter into field the word 'Bearer' following by space and JWT",
+                        Description = "Please enter your JWT token",
                         Name = "Authorization",
                         Type = SecuritySchemeType.ApiKey
                     });

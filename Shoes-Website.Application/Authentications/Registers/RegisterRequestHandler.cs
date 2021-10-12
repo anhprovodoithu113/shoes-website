@@ -39,7 +39,7 @@ namespace Shoes_Website.Application.Authentications.Registers
                 Username = request.Username,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                RoleId = 1
+                RoleId = 2
             };
             _logger.LogInformation("Save account to database");
             await _userRepository.AddAsync(account);
@@ -59,6 +59,13 @@ namespace Shoes_Website.Application.Authentications.Registers
 
         private void RequestValidator(RegisterRequest request)
         {
+            if(request.Username.Length < 3 && request.Username.Length > 20)
+            {
+                string message = "The length of username must be at least 3 and at most 20 character";
+                _logger.LogError(message);
+                throw new RegisterRequestException(message);
+            }
+
             if (request.Password != request.ConfirmPassword)
             {
                 string message = "Password is not match";
@@ -116,9 +123,9 @@ namespace Shoes_Website.Application.Authentications.Registers
             var hasLowerChar = new Regex(@"[a-z]+");
             var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
 
-            if(password.Length <= 6 || password.Length >= 15)
+            if(password.Length <= 6)
             {
-                return "Password must less than 15 and more than 6 characters";
+                return "Password must more than 6 characters";
             }
             else if (!hasNumber.IsMatch(password))
             {

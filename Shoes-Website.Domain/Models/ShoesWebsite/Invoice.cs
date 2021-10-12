@@ -16,6 +16,10 @@ namespace Shoes_Website.Domain.Models.ShoesWebsite
 
         public string InvoiceCode { get; set; }
 
+        public int OrderedAmount { get; set; }
+
+        public DateTime OrderedDate { get; set; }
+
         public DateTime? DeliveryDate { get; set; }
 
         public int ProductStatusId { get; set; }

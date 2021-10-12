@@ -71,7 +71,7 @@ namespace Shoes_Website_Project.Controllers
             return Ok(result);
         }
 
-        [Authorize(Policy = "UserRole")]
+        [Authorize(Policy = "AdminRole")]
         [HttpPost("add-new-product"), DisableRequestSizeLimit]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
@@ -93,6 +93,7 @@ namespace Shoes_Website_Project.Controllers
             return Created("", result);
         }
 
+        [Authorize(Policy = "AdminRole")]
         [HttpPost("add-product-statuses")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]

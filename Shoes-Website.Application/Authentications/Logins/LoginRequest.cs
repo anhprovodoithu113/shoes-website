@@ -2,7 +2,7 @@
 
 namespace Shoes_Website.Application.Authentications.Logins
 {
-    public class LoginRequest : IRequest<string>
+    public class LoginRequest : IRequest<LoginResponseModel>
     {
         public string Username { get; set; }
 

@@ -30,13 +30,13 @@ namespace Shoes_Website_Project.Controllers
         }
 
         [HttpPost("login")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(LoginResponseModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             var result = await _mediator.Send(loginRequest);
 
-            return Ok(new { Token = result });
+            return Ok(result);
         }
     }
 }

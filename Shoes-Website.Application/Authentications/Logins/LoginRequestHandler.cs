@@ -14,7 +14,7 @@ using System;
 
 namespace Shoes_Website.Application.Authentications.Logins
 {
-    public class LoginRequestHandler : IRequestHandler<LoginRequest, string>
+    public class LoginRequestHandler : IRequestHandler<LoginRequest, LoginResponseModel>
     {
         private readonly IUserRepository _userRepository;
         private readonly ILogger<LoginRequestHandler> _logger;
@@ -29,7 +29,7 @@ namespace Shoes_Website.Application.Authentications.Logins
             _jwtSettings = options.Value;
         }
 
-        public async Task<string> Handle(LoginRequest request, CancellationToken cancellationToken)
+        public async Task<LoginResponseModel> Handle(LoginRequest request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Begin login process");
 
@@ -50,25 +50,33 @@ namespace Shoes_Website.Application.Authentications.Logins
                 throw new LoginRequestException(message);
             }
 
-            var tokenString = CreateToken(account.RoleId);
+            var responseModel = CreateToken(account.RoleId, request.Username);
 
-            return tokenString;
+            return responseModel;
         }
 
-        private string CreateToken(int roleId)
+        private LoginResponseModel CreateToken(int roleId, string username)
         {
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
             var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+            var expiredTime = DateTime.Now.AddMinutes(30);
 
             var tokenOptions = new JwtSecurityToken(
                     issuer: _jwtSettings.Issuer,
                     audience: _jwtSettings.Issuer,
                     claims: ListClaimOfUser(roleId),
-                    expires: DateTime.Now.AddMinutes(30),
+                    expires: expiredTime,
                     signingCredentials: signingCredentials
                 );
+            var responseModel = new LoginResponseModel
+            {
+                AccessToken = $"Bearer {new JwtSecurityTokenHandler().WriteToken(tokenOptions)}",
+                ExpiredTime = expiredTime,
+                Username = username
+            };
 
-            return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+            return responseModel;
         }
 
         private bool VerifyPassword(string password, byte[] passwordHash, byte[] passwordSalt)

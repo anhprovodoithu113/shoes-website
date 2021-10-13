@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shoes_Website.Infrastructure.Domain;
 
 namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
 {
     [DbContext(typeof(ShoesWebsiteDbContext))]
-    partial class ShoesWebsiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211012085717_UpdateInvoiceModel")]
+    partial class UpdateInvoiceModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,9 +83,6 @@ namespace Shoes_Website.Infrastructure.Migrations.ShoesWebsiteDb
 
                     b.Property<int>("OrderedAmount")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("OrderedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<float>("Price")
                         .HasColumnType("real");

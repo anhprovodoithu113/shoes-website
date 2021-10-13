@@ -13,6 +13,7 @@ using Shoes_Website.Application.Products.GetColorsByProduct;
 using Shoes_Website.Application.Products.GetProductStatusesByColor;
 using Shoes_Website.Application.Products.GetProductDetailsById;
 using Microsoft.AspNetCore.Authorization;
+using Shoes_Website.Application.Products.CheckoutProducts;
 
 namespace Shoes_Website_Project.Controllers
 {
@@ -101,6 +102,16 @@ namespace Shoes_Website_Project.Controllers
         {
             var result = await _mediator.Send(command);
 
+            return Created("", result);
+        }
+
+        [Authorize(Policy = "UserRole")]
+        [HttpPost("checkout-products")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(ProblemFromSwaggerResponse), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> CheckoutProducts([FromBody] CheckoutProductsRequest command)
+        {
+            var result = await _mediator.Send(command);
             return Created("", result);
         }
     }

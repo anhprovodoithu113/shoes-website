@@ -40,7 +40,8 @@ namespace Shoes_Website.Application.Products.CheckoutProducts
                 OrderedDate = DateTime.Now,
                 OrderedAmount = request.OrderedAmount,
                 ProductStatusId = request.ProductStatusId,
-                CustomerEmail = _currentUser.Email
+                CustomerEmail = _currentUser.Email,
+                Price = request.TotalPrice
             };
 
             await _repository.AddAsync(newInvoice);

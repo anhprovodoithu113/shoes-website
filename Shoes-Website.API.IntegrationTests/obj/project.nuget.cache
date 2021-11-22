@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MBccQLc0cYVv8QL+bvu76lRo1Qu0UEHwlOCs7wMJRWVbo7e3hkuGpi4U2ZF4fB/84bh7ldkwZgazTh6tfobyWg==",
+  "dgSpecHash": "eT/czqZCxZuv7qnjF+QRBETx3Om01OSSJbwy5aGmCvsByl+skc0la5PRbkGTX5NYNYTYdNnYgpTzVKmI4ipEPw==",
   "success": true,
-  "projectFilePath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
+  "projectFilePath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\coverlet.msbuild\\3.1.0\\coverlet.msbuild.3.1.0.nupkg.sha512",

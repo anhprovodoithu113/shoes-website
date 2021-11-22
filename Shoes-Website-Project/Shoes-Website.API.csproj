@@ -31,8 +31,4 @@
     <ProjectReference Include="..\Shoes-Website.Infrastructure\Shoes-Website.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Resources\Image_Files\" />
-  </ItemGroup>
-
 </Project>

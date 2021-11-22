@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj": {}
+    "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj": {}
   },
   "projects": {
-    "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj": {
+    "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
+        "projectUniqueName": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
         "projectName": "Shoes-Website.API.IntegrationTests",
-        "projectPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
+        "projectPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\Shoes-Website.API.IntegrationTests.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\obj\\",
+        "outputPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.API.IntegrationTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

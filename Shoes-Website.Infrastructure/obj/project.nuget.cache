@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TjiVhcsT1akPoehINFbR58HCZAtZzBW63PpKlYJT9rWAcz1P90L3gPLfMHoflC1r/4iPWxHHgdQ6rz5yE9YSAQ==",
+  "dgSpecHash": "UWr/Opy1QXduJZDfKhSRBucL3qQwklhs0Gt5k07hwMs0n04k4KtuL0l7a1RzYYiE83pjAi7u4EZ9AKqK+zw4Ug==",
   "success": true,
-  "projectFilePath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj",
+  "projectFilePath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\ardalis.guardclauses\\1.5.0\\ardalis.guardclauses.1.5.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\ardalis.specification\\4.2.0\\ardalis.specification.4.2.0.nupkg.sha512",

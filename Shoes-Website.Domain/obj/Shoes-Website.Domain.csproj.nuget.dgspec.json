@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj": {}
+    "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj": {}
   },
   "projects": {
-    "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj": {
+    "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj",
+        "projectUniqueName": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj",
         "projectName": "Shoes-Website.Domain",
-        "projectPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj",
+        "projectPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\Shoes-Website.Domain.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\obj\\",
+        "outputPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

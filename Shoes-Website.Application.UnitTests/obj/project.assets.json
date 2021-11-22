@@ -9571,11 +9571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\Shoes-Website.Application.UnitTests.csproj",
+      "projectUniqueName": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\Shoes-Website.Application.UnitTests.csproj",
       "projectName": "Shoes-Website.Application.UnitTests",
-      "projectPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\Shoes-Website.Application.UnitTests.csproj",
+      "projectPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\Shoes-Website.Application.UnitTests.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\obj\\",
+      "outputPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9595,11 +9595,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application\\Shoes-Website.Application.csproj": {
-              "projectPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application\\Shoes-Website.Application.csproj"
+            "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application\\Shoes-Website.Application.csproj": {
+              "projectPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Application\\Shoes-Website.Application.csproj"
             },
-            "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj": {
-              "projectPath": "E:\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj"
+            "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj": {
+              "projectPath": "E:\\Technical Project\\C# Project\\ASP .Net Core\\Shoes-Website-Project\\Shoes-Website.Infrastructure\\Shoes-Website.Infrastructure.csproj"
             }
           }
         }
